@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Data.Models;
+using BookStore.Services;
 
 namespace BookStore
 {
@@ -19,6 +21,22 @@ namespace BookStore
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //var publisherService = new PublisherService();
+
+            //Publisher pub = new Publisher()
+            //{
+            //    Name = "Ciela"
+            //};
+
+            //try
+            //{
+            //    publisherService.CreateAsync(pub);
+            //    MessageBox.Show("Success");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error");
+            //}
         }
     }
 }
