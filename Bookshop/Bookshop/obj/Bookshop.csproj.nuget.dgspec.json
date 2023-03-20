@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ayhan\\source\\repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj": {}
+    "C:\\Users\\Ayhan\\Source\\Repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ayhan\\source\\repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj": {
+    "C:\\Users\\Ayhan\\Source\\Repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ayhan\\source\\repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj",
+        "projectUniqueName": "C:\\Users\\Ayhan\\Source\\Repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj",
         "projectName": "Bookshop",
-        "projectPath": "C:\\Users\\Ayhan\\source\\repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj",
+        "projectPath": "C:\\Users\\Ayhan\\Source\\Repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\Bookshop.csproj",
         "packagesPath": "C:\\Users\\Ayhan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Ayhan\\source\\repos\\AyhanHasanov\\Bookshop\\Bookshop\\Bookshop\\obj\\",
         "projectStyle": "PackageReference",
@@ -43,6 +43,48 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.32, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

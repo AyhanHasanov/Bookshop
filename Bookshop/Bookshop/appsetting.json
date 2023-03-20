@@ -1,0 +1,12 @@
+﻿{
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "myconn": "server=...\\SQLEXPRESS; database=Bookshop;Trusted_Connection=True;"
+  }
+}  
+}
