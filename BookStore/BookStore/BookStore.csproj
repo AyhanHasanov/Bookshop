@@ -190,6 +190,7 @@
   <ItemGroup>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\Models\Book.cs" />
+    <Compile Include="Data\Models\BookCourrier.cs" />
     <Compile Include="Data\Models\Courrier.cs" />
     <Compile Include="Data\Models\Publisher.cs" />
     <Compile Include="Form1.cs">
@@ -201,6 +202,14 @@
     <Compile Include="Migrations\20230320200309_inital.cs" />
     <Compile Include="Migrations\20230320200309_inital.designer.cs">
       <DependentUpon>20230320200309_inital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230320201225_manyToMany.cs" />
+    <Compile Include="Migrations\20230320201225_manyToMany.designer.cs">
+      <DependentUpon>20230320201225_manyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230320201735_expanded-tables.cs" />
+    <Compile Include="Migrations\20230320201735_expanded-tables.designer.cs">
+      <DependentUpon>20230320201735_expanded-tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

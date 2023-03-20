@@ -17,9 +17,8 @@ namespace BookStore.Data.Models
         public DateTime Created { get; set; }
         public int Quantity { get; set; }
         public double Price { get; set; }
+        public ICollection<BookCourrier> bookCourriers { get; set; }
 
-        [ForeignKey("PublisherId")]
-        Publisher Publisher { get; set; }
-        Courrier Courrier { get; set; }
+        public Publisher Publisher { get; set; }
     }
 }

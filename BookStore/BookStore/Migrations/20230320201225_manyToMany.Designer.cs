@@ -4,14 +4,16 @@ using BookStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230320201225_manyToMany")]
+    partial class manyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,9 +37,6 @@ namespace BookStore.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("PublisherId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -45,8 +44,6 @@ namespace BookStore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookId");
-
-                    b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
                 });
@@ -63,12 +60,6 @@ namespace BookStore.Migrations
 
                     b.Property<int>("CourrierId")
                         .HasColumnType("int");
-
-                    b.Property<string>("CourrierPhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeliveryDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("OrderID");
 
@@ -107,13 +98,6 @@ namespace BookStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Publishers");
-                });
-
-            modelBuilder.Entity("BookStore.Data.Models.Book", b =>
-                {
-                    b.HasOne("BookStore.Data.Models.Publisher", "Publisher")
-                        .WithMany("Books")
-                        .HasForeignKey("PublisherId");
                 });
 
             modelBuilder.Entity("BookStore.Data.Models.BookCourrier", b =>
