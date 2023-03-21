@@ -49,6 +49,16 @@ namespace BookStore
                 Name = "Econt"
             };
 
+            try
+            {
+                await courrierService.DeleteAsync(2);
+                MessageBox.Show("Success");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+
         }
     }
 }
