@@ -25,9 +25,18 @@ namespace BookStore.Services
             return publisher;
         }
 
-        public Task<Publisher> DeleteAsync(int publisherId)
+        public async Task<bool> DeleteAsync(int publisherId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Publishers.Remove(await GetPublisherByIdAsync(publisherId));
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public async Task<ICollection<Publisher>> GetAllPublisherAsync()
@@ -40,14 +49,12 @@ namespace BookStore.Services
             return await _context.FindAsync<Publisher>(publisherId);
         }
 
-        public async Task<Publisher> GetPublisherByNameAsync(string publisherName)
-        {
-            return await _context.FindAsync<Publisher>(publisherName);
-        }
 
-        public Task<Publisher> UpdateAsync(Publisher publisher)
+        public async Task<Publisher> UpdateAsync(Publisher publisher)
         {
-            throw new NotImplementedException();
+            _context.Publishers.Update(publisher);
+            await _context.SaveChangesAsync();
+            return publisher;
         }
     }
 }

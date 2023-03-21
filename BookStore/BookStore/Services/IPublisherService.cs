@@ -10,10 +10,9 @@ namespace BookStore.Services
     public interface IPublisherService
     {
         Task<ICollection<Publisher>> GetAllPublisherAsync();
-        Task<Publisher> GetPublisherByNameAsync(string publisherName);
         Task<Publisher> GetPublisherByIdAsync(int publisherId);
         Task<Publisher> CreateAsync(Publisher publisher);
         Task<Publisher> UpdateAsync(Publisher publisher);
-        Task<Publisher> DeleteAsync(int publisherId);
+        Task<bool> DeleteAsync(int publisherId);
     }
 }

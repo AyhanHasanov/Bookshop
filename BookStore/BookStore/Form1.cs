@@ -19,24 +19,29 @@ namespace BookStore
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            //var publisherService = new PublisherService();
+            var publisherService = new PublisherService();
 
-            //Publisher pub = new Publisher()
-            //{
-            //    Name = "Ciela"
-            //};
+            Publisher pub = new Publisher()
+            {
+                Name = "Ciela"
+            };
 
-            //try
-            //{
-            //    publisherService.CreateAsync(pub);
-            //    MessageBox.Show("Success");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error");
-            //}
+            try
+            {
+                await publisherService.CreateAsync(pub);
+                pub.Name = "Updated";
+                await publisherService.UpdateAsync(pub);
+                await publisherService.GetAllPublisherAsync();
+                await publisherService.GetPublisherByIdAsync(2);
+                await publisherService.DeleteAsync(2);
+                MessageBox.Show("Success");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }
