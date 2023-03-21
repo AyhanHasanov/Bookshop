@@ -188,6 +188,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\CourrierService.cs" />
+    <Compile Include="Services\ICourrierService.cs" />
     <Compile Include="Services\IPublisherService.cs" />
     <Compile Include="Services\PublisherService.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />

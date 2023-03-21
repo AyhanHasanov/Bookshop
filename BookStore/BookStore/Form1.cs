@@ -22,26 +22,33 @@ namespace BookStore
         private async void Form1_Load(object sender, EventArgs e)
         {
             var publisherService = new PublisherService();
+            var courrierService = new CourrierService();
 
-            Publisher pub = new Publisher()
+            //Publisher pub = new Publisher()
+            //{
+            //    Name = "Ciela"
+            //};
+
+            //try
+            //{
+            //    await publisherService.CreateAsync(pub);
+            //    pub.Name = "Updated";
+            //    await publisherService.UpdateAsync(pub);
+            //    await publisherService.GetAllPublisherAsync();
+            //    await publisherService.GetPublisherByIdAsync(2);
+            //    await publisherService.DeleteAsync(2);
+            //    MessageBox.Show("Success");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error");
+            //}
+
+            Courrier cou = new Courrier()
             {
-                Name = "Ciela"
+                Name = "Econt"
             };
 
-            try
-            {
-                await publisherService.CreateAsync(pub);
-                pub.Name = "Updated";
-                await publisherService.UpdateAsync(pub);
-                await publisherService.GetAllPublisherAsync();
-                await publisherService.GetPublisherByIdAsync(2);
-                await publisherService.DeleteAsync(2);
-                MessageBox.Show("Success");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error");
-            }
         }
     }
 }
