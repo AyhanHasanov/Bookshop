@@ -23,6 +23,7 @@ namespace BookStore
         {
             var publisherService = new PublisherService();
             var courrierService = new CourrierService();
+            var bookService = new BookService();
 
             //Publisher pub = new Publisher()
             //{
@@ -44,20 +45,44 @@ namespace BookStore
             //    MessageBox.Show("Error");
             //}
 
-            Courrier cou = new Courrier()
-            {
-                Name = "Econt"
-            };
+            //Courrier cou = new Courrier()
+            //{
+            //    Name = "Econt"
+            //};
 
-            try
-            {
-                await courrierService.DeleteAsync(2);
-                MessageBox.Show("Success");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-            }
+            //try
+            //{
+            //    await courrierService.DeleteAsync(2);
+            //    MessageBox.Show("Success");
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error");
+            //}
+
+            //Book book = new Book()
+            //{
+            //    Title = "aaa",
+            //    Author = "bbb",
+            //    Created = DateTime.Now,
+            //    Quantity = 5,
+            //    Price = 5.60
+            //};
+
+            //try
+            //{
+            //    await bookService.CreateAsync(book);
+            //    await bookService.GetAllBookAsync();
+            //    await bookService.GetBookByIdAsync(1);
+            //    book.Title = "dffd";
+            //    await bookService.UpdateAsync(book);
+            //    await bookService.DeleteAsync(1);
+            //    MessageBox.Show("Success");
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error");
+            //}
 
         }
     }
