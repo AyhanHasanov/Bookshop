@@ -4,14 +4,16 @@ using BookStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230321213143_insert-courriers")]
+    partial class insertcourriers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,78 +51,6 @@ namespace BookStore.Migrations
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            BookId = 1,
-                            Author = "Захари Карабашлиев",
-                            Created = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 18.5,
-                            PublisherId = 1,
-                            Quantity = 100,
-                            Title = "Опашката"
-                        },
-                        new
-                        {
-                            BookId = 2,
-                            Author = "Дамян Дамянов",
-                            Created = new DateTime(2011, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 22.600000000000001,
-                            PublisherId = 6,
-                            Quantity = 50,
-                            Title = "Избрани стихотворения"
-                        },
-                        new
-                        {
-                            BookId = 3,
-                            Author = "Георги Господинов",
-                            Created = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 20.0,
-                            PublisherId = 2,
-                            Quantity = 500,
-                            Title = "Времеубежище"
-                        },
-                        new
-                        {
-                            BookId = 4,
-                            Author = "Джордж Оруел",
-                            Created = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 17.989999999999998,
-                            PublisherId = 3,
-                            Quantity = 30,
-                            Title = "1984"
-                        },
-                        new
-                        {
-                            BookId = 5,
-                            Author = "Виктор Пасков",
-                            Created = new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 19.899999999999999,
-                            PublisherId = 5,
-                            Quantity = 15,
-                            Title = "Аутопсия на една любов"
-                        },
-                        new
-                        {
-                            BookId = 6,
-                            Author = "Константин Трендафилов",
-                            Created = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 15.0,
-                            PublisherId = 4,
-                            Quantity = 1500,
-                            Title = "Имам нещо да ти кажа"
-                        },
-                        new
-                        {
-                            BookId = 7,
-                            Author = "Антоан Дьо Екзюпери",
-                            Created = new DateTime(2015, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 7.9000000000000004,
-                            PublisherId = 1,
-                            Quantity = 3000,
-                            Title = "Малкият Принц"
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Data.Models.BookCourrier", b =>
@@ -149,24 +79,6 @@ namespace BookStore.Migrations
                     b.HasIndex("CourrierId");
 
                     b.ToTable("BookCourrier");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderID = 1,
-                            BookId = 2,
-                            CourrierId = 3,
-                            CourrierPhoneNumber = "+359875740295",
-                            DeliveryDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            OrderID = 2,
-                            BookId = 3,
-                            CourrierId = 1,
-                            CourrierPhoneNumber = "135987455740295",
-                            DeliveryDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Data.Models.Courrier", b =>

@@ -19,6 +19,8 @@ namespace BookStore.Data.Models
         public double Price { get; set; }
         public ICollection<BookCourrier> bookCourriers { get; set; }
 
+        [ForeignKey("PublisherId")]
+        public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
     }
 }

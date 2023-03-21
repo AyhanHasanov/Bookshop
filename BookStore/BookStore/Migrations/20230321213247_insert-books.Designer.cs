@@ -4,14 +4,16 @@ using BookStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230321213247_insert-books")]
+    partial class insertbooks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,24 +151,6 @@ namespace BookStore.Migrations
                     b.HasIndex("CourrierId");
 
                     b.ToTable("BookCourrier");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderID = 1,
-                            BookId = 2,
-                            CourrierId = 3,
-                            CourrierPhoneNumber = "+359875740295",
-                            DeliveryDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            OrderID = 2,
-                            BookId = 3,
-                            CourrierId = 1,
-                            CourrierPhoneNumber = "135987455740295",
-                            DeliveryDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Data.Models.Courrier", b =>

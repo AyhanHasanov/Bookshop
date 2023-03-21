@@ -188,6 +188,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Attributes\IsPhoneNumberValidAttribute.cs" />
+    <Compile Include="Migrations\20230321213101_insert-publishers.cs" />
+    <Compile Include="Migrations\20230321213101_insert-publishers.designer.cs">
+      <DependentUpon>20230321213101_insert-publishers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230321213143_insert-courriers.cs" />
+    <Compile Include="Migrations\20230321213143_insert-courriers.designer.cs">
+      <DependentUpon>20230321213143_insert-courriers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230321213247_insert-books.cs" />
+    <Compile Include="Migrations\20230321213247_insert-books.designer.cs">
+      <DependentUpon>20230321213247_insert-books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230321213549_insert-bookcourriers.cs" />
+    <Compile Include="Migrations\20230321213549_insert-bookcourriers.designer.cs">
+      <DependentUpon>20230321213549_insert-bookcourriers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20230321213753_insert-bookcourrierswrong.cs" />
+    <Compile Include="Migrations\20230321213753_insert-bookcourrierswrong.designer.cs">
+      <DependentUpon>20230321213753_insert-bookcourrierswrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\CourrierService.cs" />
     <Compile Include="Services\IBookService.cs" />
@@ -217,7 +239,6 @@
     <Compile Include="Migrations\20230320201735_expanded-tables.designer.cs">
       <DependentUpon>20230320201735_expanded-tables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
