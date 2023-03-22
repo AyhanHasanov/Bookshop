@@ -137,5 +137,6 @@ namespace BookStore.Data
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
         public virtual DbSet<Courrier> Courriers { get; set; }
+        public virtual DbSet<BookCourrier> BookCourriers { get; set; }
     }
 }

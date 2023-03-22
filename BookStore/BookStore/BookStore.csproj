@@ -210,11 +210,13 @@
       <DependentUpon>20230321213753_insert-bookcourrierswrong.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Include="Services\BookCourrierService.cs" />
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\CourrierService.cs" />
-    <Compile Include="Services\IBookService.cs" />
-    <Compile Include="Services\ICourrierService.cs" />
-    <Compile Include="Services\IPublisherService.cs" />
+    <Compile Include="Services\Interfaces\IBookCourrierService.cs" />
+    <Compile Include="Services\Interfaces\IBookService.cs" />
+    <Compile Include="Services\Interfaces\ICourrierService.cs" />
+    <Compile Include="Services\Interfaces\IPublisherService.cs" />
     <Compile Include="Services\PublisherService.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\Models\Book.cs" />
