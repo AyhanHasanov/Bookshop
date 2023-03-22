@@ -19,71 +19,85 @@ namespace BookStore
             InitializeComponent();
         }
 
+        private PublisherService publisherService = new PublisherService();
+        private CourrierService courrierService = new CourrierService();
+        private BookService bookService = new BookService();
+        private BookCourrierService bookCourrierService = new BookCourrierService();
         private async void Form1_Load(object sender, EventArgs e)
         {
-            var publisherService = new PublisherService();
-            var courrierService = new CourrierService();
-            var bookService = new BookService();
+            
+            panelHome.Location = new Point(0, 0);
+            panelTables.Location = new Point(0, 0);
+            this.Size = panelHome.Size;
+            panelTables.Visible = false;
 
-            //Publisher pub = new Publisher()
-            //{
-            //    Name = "Ciela"
-            //};
+           
+            //panelHome.BackColor = Color.Red;
+            //panelTables.BackColor = Color.Blue;
+        
+        }
 
-            //try
-            //{
-            //    await publisherService.CreateAsync(pub);
-            //    pub.Name = "Updated";
-            //    await publisherService.UpdateAsync(pub);
-            //    await publisherService.GetAllPublisherAsync();
-            //    await publisherService.GetPublisherByIdAsync(2);
-            //    await publisherService.DeleteAsync(2);
-            //    MessageBox.Show("Success");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error");
-            //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Size = panelTables.Size;
+            this.Height += 20;
+            panelHome.Visible = false;
+            panelTables.Visible = true;
+        }
 
-            //Courrier cou = new Courrier()
-            //{
-            //    Name = "Econt"
-            //};
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Size = panelHome.Size;
+            panelHome.Visible = true;
+            panelTables.Visible = false;
+        }
 
-            //try
-            //{
-            //    await courrierService.DeleteAsync(2);
-            //    MessageBox.Show("Success");
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Error");
-            //}
+        private async void bttnRaw_Click(object sender, EventArgs e)
+        {
+            lstBoxCourriers.Items.Clear();
+            lstBoxPublishers.Items.Clear();
+            lstBoxOrders.Items.Clear();
+            lstBoxBooks.Items.Clear();
+            
+            foreach (var book in await bookService.GetAllBookAsync())
+            {
+                lstBoxBooks.Items.Add($"ID: {book.BookId}");
+                lstBoxBooks.Items.Add($"Заглавие: \"{book.Title}\"");
+                lstBoxBooks.Items.Add($"Автор: {book.Author}");
+                lstBoxBooks.Items.Add($"Дата на издаване: {book.Created.Year}");
+                lstBoxBooks.Items.Add($"Цена: {book.Price:f2}");
+                var publisher = await publisherService.GetPublisherByIdAsync(book.PublisherId);
+                lstBoxBooks.Items.Add($"Издателство: {publisher.Name}");
+                lstBoxBooks.Items.Add(" ");
+            }
 
-            //Book book = new Book()
-            //{
-            //    Title = "aaa",
-            //    Author = "bbb",
-            //    Created = DateTime.Now,
-            //    Quantity = 5,
-            //    Price = 5.60
-            //};
+            foreach (var publisher in await publisherService.GetAllPublisherAsync())
+            {
+                lstBoxPublishers.Items.Add($"ID: {publisher.Id}");
+                lstBoxPublishers.Items.Add($"Име: {publisher.Name}");
+                lstBoxPublishers.Items.Add($"");
+            }
 
-            //try
-            //{
-            //    await bookService.CreateAsync(book);
-            //    await bookService.GetAllBookAsync();
-            //    await bookService.GetBookByIdAsync(1);
-            //    book.Title = "dffd";
-            //    await bookService.UpdateAsync(book);
-            //    await bookService.DeleteAsync(1);
-            //    MessageBox.Show("Success");
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Error");
-            //}
+            foreach (var courrier in await courrierService.GetAllCourriersAsync())
+            {
+                lstBoxCourriers.Items.Add($"ID: {courrier.Id}");
+                lstBoxCourriers.Items.Add($"Име: {courrier.Name}");
+                lstBoxCourriers.Items.Add($"");
+            }
 
+            foreach (var order in await bookCourrierService.GetAllBookCourriersAsync())
+            {
+                lstBoxOrders.Items.Add($"Order ID: {order.OrderID}");
+                var book = await bookService.GetBookByIdAsync(order.BookId);
+
+                lstBoxOrders.Items.Add($"Book ID/Title: {book.BookId} / {book.Title}");
+                var courrier = await courrierService.GetCourrierByIdAsync(order.CourrierId);
+                
+                lstBoxOrders.Items.Add($"Courrier ID/Name: {courrier.Id} / {courrier.Name}");
+                lstBoxOrders.Items.Add($"Courrier Phone Number: {order.CourrierPhoneNumber}");
+                lstBoxOrders.Items.Add($"Delivery date: {order.DeliveryDate.Date}");
+                lstBoxOrders.Items.Add($"");
+            }
         }
     }
 }

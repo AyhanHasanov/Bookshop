@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BookStore"
+    "\\BookStore",
+    "\\BookStore\\BookStore",
+    "\\BookStore\\BookStore\\Migrations"
   ],
-  "SelectedNode": "\\BookStore\\BookStore.sln",
+  "SelectedNode": "\\BookStore\\BookStore\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

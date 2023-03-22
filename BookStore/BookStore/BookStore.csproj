@@ -209,6 +209,10 @@
     <Compile Include="Migrations\20230321213753_insert-bookcourrierswrong.designer.cs">
       <DependentUpon>20230321213753_insert-bookcourrierswrong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20230322130913_added-missing-table.cs" />
+    <Compile Include="Migrations\20230322130913_added-missing-table.designer.cs">
+      <DependentUpon>20230322130913_added-missing-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Services\BookCourrierService.cs" />
     <Compile Include="Services\BookService.cs" />
