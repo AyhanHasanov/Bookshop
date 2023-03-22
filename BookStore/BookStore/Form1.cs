@@ -68,6 +68,7 @@ namespace BookStore
                 lstBoxBooks.Items.Add($"Цена: {book.Price:f2}");
                 var publisher = await publisherService.GetPublisherByIdAsync(book.PublisherId);
                 lstBoxBooks.Items.Add($"Издателство: {publisher.Name}");
+                lstBoxBooks.Items.Add($"Оставащи бройки: {book.Quantity}");
                 lstBoxBooks.Items.Add(" ");
             }
 
@@ -87,15 +88,16 @@ namespace BookStore
 
             foreach (var order in await bookCourrierService.GetAllBookCourriersAsync())
             {
-                lstBoxOrders.Items.Add($"Order ID: {order.OrderID}");
+                lstBoxOrders.Items.Add($"Поръчка ID: {order.OrderID}");
                 var book = await bookService.GetBookByIdAsync(order.BookId);
 
-                lstBoxOrders.Items.Add($"Book ID/Title: {book.BookId} / {book.Title}");
+                lstBoxOrders.Items.Add($"Книга ID/Заглавие: {book.BookId} / {book.Title}");
                 var courrier = await courrierService.GetCourrierByIdAsync(order.CourrierId);
                 
-                lstBoxOrders.Items.Add($"Courrier ID/Name: {courrier.Id} / {courrier.Name}");
-                lstBoxOrders.Items.Add($"Courrier Phone Number: {order.CourrierPhoneNumber}");
-                lstBoxOrders.Items.Add($"Delivery date: {order.DeliveryDate.Date}");
+                lstBoxOrders.Items.Add($"Куриер ID/Име: {courrier.Id} / {courrier.Name}");
+                lstBoxOrders.Items.Add($"Тел. Куриер: {courrier.CourrierPhoneNumber}");
+                lstBoxOrders.Items.Add($"Дата на доставка: {order.DeliveryDate.Date}");
+                lstBoxOrders.Items.Add($"Поръчан брой: {order.Quantity}");
                 lstBoxOrders.Items.Add($"");
             }
         }

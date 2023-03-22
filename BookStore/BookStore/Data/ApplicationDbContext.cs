@@ -36,10 +36,10 @@ namespace BookStore.Data
                 );
 
             modelBuilder.Entity<Courrier>().HasData(
-                new Courrier() { Id = 1, Name = "Econt" },
-                new Courrier() { Id = 2, Name = "Speedy" },
-                new Courrier() { Id = 3, Name = "FedEx" },
-                new Courrier() { Id = 4, Name = "EuropaRoads" }
+                new Courrier() { Id = 1, Name = "Econt", CourrierPhoneNumber = "+359876760245"},
+                new Courrier() { Id = 2, Name = "Speedy", CourrierPhoneNumber = "+359123456789" },
+                new Courrier() { Id = 3, Name = "FedEx", CourrierPhoneNumber = "+359741258963" },
+                new Courrier() { Id = 4, Name = "EuropaRoads", CourrierPhoneNumber = "+359002121215" }
                 );
 
             modelBuilder.Entity<Book>().HasData(
@@ -122,7 +122,7 @@ namespace BookStore.Data
                     BookId = 2,
                     CourrierId = 3,
                     DeliveryDate = new DateTime(2023, 1, 15),
-                    CourrierPhoneNumber = "+359875740295"
+                    Quantity = 6
                 },
                 new BookCourrier
                 {
@@ -130,7 +130,7 @@ namespace BookStore.Data
                     BookId = 3,
                     CourrierId = 1,
                     DeliveryDate = new DateTime(2023, 1, 15),
-                    CourrierPhoneNumber = "135987455740295"
+                    Quantity = 2
                 }
                 );
         }

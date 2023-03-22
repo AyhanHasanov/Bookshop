@@ -20,8 +20,8 @@ namespace BookStore.Data.Models
         public Book Book { get;set; }
         public Courrier Courrier { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public int Quantity { get; set; }
 
-        [IsPhoneNumberValid]
-        public string CourrierPhoneNumber { get; set; }
+        
     }
 }

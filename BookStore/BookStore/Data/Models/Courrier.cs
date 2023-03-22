@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.Data.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace BookStore.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<BookCourrier> bookCourriers { get; set; }
+        [IsPhoneNumberValid]
+        public string CourrierPhoneNumber { get; set; }
     }
 }
