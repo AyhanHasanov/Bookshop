@@ -89,6 +89,7 @@ namespace BookStore
             {
                 lstBoxCourriers.Items.Add($"ID: {courrier.Id}");
                 lstBoxCourriers.Items.Add($"Име: {courrier.Name}");
+                lstBoxCourriers.Items.Add($"Тел.: {courrier.CourrierPhoneNumber}");
                 lstBoxCourriers.Items.Add($"");
             }
 
@@ -112,6 +113,7 @@ namespace BookStore
         {
             BookCrud bookCrud = new BookCrud();
             bookCrud.ShowDialog();
+            bttnRaw_Click(sender, e);
 
         }
 
@@ -119,11 +121,21 @@ namespace BookStore
         {
             PublisherCrud publisherCrud = new PublisherCrud();
             publisherCrud.ShowDialog();
+            bttnRaw_Click(sender, e);
         }
 
         private void bttnCourriersOperations_Click(object sender, EventArgs e)
         {
+            CourrierCrud courrierCrud = new CourrierCrud();
+            courrierCrud.ShowDialog();
+            bttnRaw_Click(sender, e);
+        }
 
+        private void bttnOrdersOperations_Click(object sender, EventArgs e)
+        {
+            OrderCrud orderCrud = new OrderCrud();
+            orderCrud.ShowDialog();
+            bttnRaw_Click(sender, e);
         }
     }
 }

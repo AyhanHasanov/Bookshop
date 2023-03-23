@@ -46,6 +46,18 @@ namespace BookStore.Services
             return await _context.Courriers.FindAsync(courrierId);
         }
 
+        public async Task<Courrier> GetCourrierByNameAsync(string name)
+        {
+            foreach (var courrier in _context.Courriers)
+            {
+                if (courrier.Name.Equals(name))
+                {
+                    return courrier;
+                }
+            }
+
+            return null;
+        }
         public async Task<Courrier> UpdateAsync(Courrier courrier)
         {
             _context.Courriers.Update(courrier);

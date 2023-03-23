@@ -32,6 +32,8 @@
             this.bttnQueries = new System.Windows.Forms.Button();
             this.panelHome = new System.Windows.Forms.Panel();
             this.panelTables = new System.Windows.Forms.Panel();
+            this.bttnCourriersOperations = new System.Windows.Forms.Button();
+            this.bttnPublisherOperations = new System.Windows.Forms.Button();
             this.bttnBookOperations = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +45,7 @@
             this.lstBoxBooks = new System.Windows.Forms.ListBox();
             this.bttnRaw = new System.Windows.Forms.Button();
             this.bttnHome = new System.Windows.Forms.Button();
-            this.bttnPublisherOperations = new System.Windows.Forms.Button();
-            this.bttnCourriersOperations = new System.Windows.Forms.Button();
+            this.bttnOrdersOperations = new System.Windows.Forms.Button();
             this.panelHome.SuspendLayout();
             this.panelTables.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // panelTables
             // 
+            this.panelTables.Controls.Add(this.bttnOrdersOperations);
             this.panelTables.Controls.Add(this.bttnCourriersOperations);
             this.panelTables.Controls.Add(this.bttnPublisherOperations);
             this.panelTables.Controls.Add(this.bttnBookOperations);
@@ -96,6 +98,26 @@
             this.panelTables.Name = "panelTables";
             this.panelTables.Size = new System.Drawing.Size(1498, 790);
             this.panelTables.TabIndex = 2;
+            // 
+            // bttnCourriersOperations
+            // 
+            this.bttnCourriersOperations.Location = new System.Drawing.Point(731, 686);
+            this.bttnCourriersOperations.Name = "bttnCourriersOperations";
+            this.bttnCourriersOperations.Size = new System.Drawing.Size(234, 47);
+            this.bttnCourriersOperations.TabIndex = 5;
+            this.bttnCourriersOperations.Text = "Добави / Редактирай / Изтрий";
+            this.bttnCourriersOperations.UseVisualStyleBackColor = true;
+            this.bttnCourriersOperations.Click += new System.EventHandler(this.bttnCourriersOperations_Click);
+            // 
+            // bttnPublisherOperations
+            // 
+            this.bttnPublisherOperations.Location = new System.Drawing.Point(491, 686);
+            this.bttnPublisherOperations.Name = "bttnPublisherOperations";
+            this.bttnPublisherOperations.Size = new System.Drawing.Size(234, 47);
+            this.bttnPublisherOperations.TabIndex = 5;
+            this.bttnPublisherOperations.Text = "Добави / Редактирай / Изтрий";
+            this.bttnPublisherOperations.UseVisualStyleBackColor = true;
+            this.bttnPublisherOperations.Click += new System.EventHandler(this.bttnPublisherOperations_Click);
             // 
             // bttnBookOperations
             // 
@@ -203,25 +225,15 @@
             this.bttnHome.UseVisualStyleBackColor = true;
             this.bttnHome.Click += new System.EventHandler(this.button3_Click);
             // 
-            // bttnPublisherOperations
+            // bttnOrdersOperations
             // 
-            this.bttnPublisherOperations.Location = new System.Drawing.Point(491, 686);
-            this.bttnPublisherOperations.Name = "bttnPublisherOperations";
-            this.bttnPublisherOperations.Size = new System.Drawing.Size(234, 47);
-            this.bttnPublisherOperations.TabIndex = 5;
-            this.bttnPublisherOperations.Text = "Добави / Редактирай / Изтрий";
-            this.bttnPublisherOperations.UseVisualStyleBackColor = true;
-            this.bttnPublisherOperations.Click += new System.EventHandler(this.bttnPublisherOperations_Click);
-            // 
-            // bttnCourriersOperations
-            // 
-            this.bttnCourriersOperations.Location = new System.Drawing.Point(731, 686);
-            this.bttnCourriersOperations.Name = "bttnCourriersOperations";
-            this.bttnCourriersOperations.Size = new System.Drawing.Size(234, 47);
-            this.bttnCourriersOperations.TabIndex = 5;
-            this.bttnCourriersOperations.Text = "Добави / Редактирай / Изтрий";
-            this.bttnCourriersOperations.UseVisualStyleBackColor = true;
-            this.bttnCourriersOperations.Click += new System.EventHandler(this.bttnCourriersOperations_Click);
+            this.bttnOrdersOperations.Location = new System.Drawing.Point(971, 686);
+            this.bttnOrdersOperations.Name = "bttnOrdersOperations";
+            this.bttnOrdersOperations.Size = new System.Drawing.Size(475, 47);
+            this.bttnOrdersOperations.TabIndex = 5;
+            this.bttnOrdersOperations.Text = "Добави / Редактирай / Изтрий";
+            this.bttnOrdersOperations.UseVisualStyleBackColor = true;
+            this.bttnOrdersOperations.Click += new System.EventHandler(this.bttnOrdersOperations_Click);
             // 
             // Form1
             // 
@@ -261,6 +273,7 @@
         private System.Windows.Forms.Button bttnBookOperations;
         private System.Windows.Forms.Button bttnCourriersOperations;
         private System.Windows.Forms.Button bttnPublisherOperations;
+        private System.Windows.Forms.Button bttnOrdersOperations;
     }
 }
 

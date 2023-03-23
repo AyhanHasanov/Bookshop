@@ -47,6 +47,16 @@ namespace BookStore.Services
             return await _context.Books.FindAsync(bookId);
         }
 
+        public async Task<Book> GetBookByTitleAsync(string title)
+        {
+            foreach (var book in _context.Books)
+            {
+                if (book.Title.Equals(title))
+                    return book;
+            }
+
+            return null;
+        }
         public async Task<Book> UpdateAsync(Book book)
         {
             _context.Books.Update(book);
