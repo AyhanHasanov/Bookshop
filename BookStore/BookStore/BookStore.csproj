@@ -257,6 +257,12 @@
     <Compile Include="Subforms\BookCrud.Designer.cs">
       <DependentUpon>BookCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subforms\PublisherCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subforms\PublisherCrud.Designer.cs">
+      <DependentUpon>PublisherCrud.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +277,9 @@
     </Compile>
     <EmbeddedResource Include="Subforms\BookCrud.resx">
       <DependentUpon>BookCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subforms\PublisherCrud.resx">
+      <DependentUpon>PublisherCrud.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -204,3 +204,4 @@ C:\Users\Ayhan\source\repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\
 C:\Users\Ayhan\source\repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.exe
 C:\Users\Ayhan\source\repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.pdb
 C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.BookCrud.resources
+C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.PublisherCrud.resources

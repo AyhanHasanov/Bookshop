@@ -26,7 +26,7 @@ namespace BookStore
         private BookCourrierService bookCourrierService = new BookCourrierService();
         private async void Form1_Load(object sender, EventArgs e)
         {
-            
+
             panelHome.Location = new Point(0, 0);
             panelTables.Location = new Point(0, 0);
             this.Size = panelHome.Size;
@@ -35,7 +35,7 @@ namespace BookStore
             bttnRaw_Click(sender, e);
             //panelHome.BackColor = Color.Red;
             //panelTables.BackColor = Color.Blue;
-        
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,11 +55,16 @@ namespace BookStore
 
         private async void bttnRaw_Click(object sender, EventArgs e)
         {
+            publisherService = new PublisherService();
+            courrierService = new CourrierService();
+            bookService = new BookService();
+            bookCourrierService = new BookCourrierService();
+        
             lstBoxCourriers.Items.Clear();
             lstBoxPublishers.Items.Clear();
             lstBoxOrders.Items.Clear();
             lstBoxBooks.Items.Clear();
-            
+
             foreach (var book in await bookService.GetAllBookAsync())
             {
                 lstBoxBooks.Items.Add($"ID: {book.BookId}");
@@ -94,7 +99,7 @@ namespace BookStore
 
                 lstBoxOrders.Items.Add($"Книга ID/Заглавие: {book.BookId} / {book.Title}");
                 var courrier = await courrierService.GetCourrierByIdAsync(order.CourrierId);
-                
+
                 lstBoxOrders.Items.Add($"Куриер ID/Име: {courrier.Id} / {courrier.Name}");
                 lstBoxOrders.Items.Add($"Тел. Куриер: {courrier.CourrierPhoneNumber}");
                 lstBoxOrders.Items.Add($"Дата на доставка: {order.DeliveryDate.Date}");
@@ -112,7 +117,8 @@ namespace BookStore
 
         private void bttnPublisherOperations_Click(object sender, EventArgs e)
         {
-
+            PublisherCrud publisherCrud = new PublisherCrud();
+            publisherCrud.ShowDialog();
         }
 
         private void bttnCourriersOperations_Click(object sender, EventArgs e)
