@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStore.Data.Models;
 using BookStore.Services;
+using BookStore.Subforms;
 
 namespace BookStore
 {
@@ -31,7 +32,7 @@ namespace BookStore
             this.Size = panelHome.Size;
             panelTables.Visible = false;
 
-           
+            bttnRaw_Click(sender, e);
             //panelHome.BackColor = Color.Red;
             //panelTables.BackColor = Color.Blue;
         
@@ -100,6 +101,23 @@ namespace BookStore
                 lstBoxOrders.Items.Add($"Поръчан брой: {order.Quantity}");
                 lstBoxOrders.Items.Add($"");
             }
+        }
+
+        private void bttnBookOperations_Click(object sender, EventArgs e)
+        {
+            BookCrud bookCrud = new BookCrud();
+            bookCrud.ShowDialog();
+
+        }
+
+        private void bttnPublisherOperations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnCourriersOperations_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

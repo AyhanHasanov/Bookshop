@@ -47,7 +47,16 @@ namespace BookStore.Services
             return await _context.FindAsync<Publisher>(publisherId);
         }
 
+        public async Task<Publisher> GetPublisherByNameAsync(string name)
+        {
+            foreach (var pub in _context.Publishers)
+            {
+                if (pub.Name.Equals(name))
+                    return pub;
+            }
 
+            return null;
+        }
         public async Task<Publisher> UpdateAsync(Publisher publisher)
         {
             _context.Publishers.Update(publisher);
