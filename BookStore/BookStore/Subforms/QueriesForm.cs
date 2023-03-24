@@ -21,52 +21,106 @@ namespace BookStore.Subforms
         private BookService _bookService;
         private BookCourrierService _orderService;
         private CourrierService _courrierService;
+        private PublisherService _publisherService;
         private async void QueriesForm_Load(object sender, EventArgs e)
         {
             _bookService = new BookService();
             _orderService = new BookCourrierService();
             _courrierService = new CourrierService();
+            _publisherService = new PublisherService();
 
-            FindAndDisplayMostExpensiveBook();
-            DisplayBookNameAuthorAndCourrier();
+            await FindAndDisplayMostExpensiveBook();
+            await DisplayBookNameAuthorAndCourrier();
+            await DisplayBookWithPriceBetween15And35();
         }
 
-        private async void DisplayBookNameAuthorAndCourrier()
+        private async Task<bool> DisplayBookWithPriceBetween15And35()
         {
-            foreach (var order in await _orderService.GetAllBookCourriersAsync())
+
+            try
             {
-                Book book = await _bookService.GetBookByIdAsync(order.BookId);
-                Courrier courrier = await _courrierService.GetCourrierByIdAsync(order.CourrierId);
-
-                lstBox3.Items.Add($"\"{book.Title}\"");
-                lstBox3.Items.Add($"{book.Author}");
-                lstBox3.Items.Add($"{courrier.Name}");
-                lstBox3.Items.Add(" ");
-            }
-        }
-
-        private async void FindAndDisplayMostExpensiveBook()
-        {
-            Book mostExpensive = null;
-            double priceController = int.MinValue;
-
-            foreach (var book in await _bookService.GetAllBookAsync())
-            {
-                combo1Books.Items.Add($"{book.Title} - {book.Author}");
-                if (book.Price > priceController)
+                foreach (var order in await _orderService.GetAllBookCourriersAsync())
                 {
-                    mostExpensive = book;
-                    priceController = book.Price;
+                    Book book = await _bookService.GetBookByIdAsync(order.BookId);
+                    Courrier courrier = await _courrierService.GetCourrierByIdAsync(order.CourrierId);
+                    //Publisher publisher = await _publisherService.GetPublisherByIdAsync(book.PublisherId);
+
+                    if (book.Price >= 15 && book.Price <= 35)
+                    {
+                        lstBox6.Items.Add($"ID {book.BookId}: \"{book.Title}\"");
+                        lstBox6.Items.Add($"{book.Author}");
+                        lstBox6.Items.Add($"{book.Price:f2}");
+                        lstBox6.Items.Add($"{courrier.Name}"); ;
+                        lstBox6.Items.Add($"{order.DeliveryDate}");
+                        lstBox6.Items.Add($"{courrier.CourrierPhoneNumber}");
+                        lstBox6.Items.Add($"");
+
+                    }
                 }
+
+                return true;
+
             }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private async Task<bool> DisplayBookNameAuthorAndCourrier()
+        {
+            try
+            {
+                foreach (var order in await _orderService.GetAllBookCourriersAsync())
+                {
+                    Book book = await _bookService.GetBookByIdAsync(order.BookId);
+                    Courrier courrier = await _courrierService.GetCourrierByIdAsync(order.CourrierId);
+
+                    lstBox3.Items.Add($"\"{book.Title}\"");
+                    lstBox3.Items.Add($"{book.Author}");
+                    lstBox3.Items.Add($"{courrier.Name}");
+                    lstBox3.Items.Add(" ");
+                }
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private async Task<bool> FindAndDisplayMostExpensiveBook()
+        {
+            try
+            {
+                Book mostExpensive = null;
+                double priceController = int.MinValue;
+
+                foreach (var book in await _bookService.GetAllBookAsync())
+                {
+                    combo1Books.Items.Add($"{book.Title} - {book.Author}");
+                    if (book.Price > priceController)
+                    {
+                        mostExpensive = book;
+                        priceController = book.Price;
+                    }
+                }
 
 
-            lblMostExpensive.Text = $"Най-скъпата книга е:\n\"{mostExpensive.Title}\"\n" +
-                $"от {mostExpensive.Author}\n" +
-                $"с цена {mostExpensive.Price:f2} BGN, \n" +
-                $"издадена през {mostExpensive.Created.ToString("yyyy")}\n" +
-                $"от ид издател {mostExpensive.PublisherId} и\n" +
-                $"налично количество - {mostExpensive.Quantity}";
+                lblMostExpensive.Text = $"Най-скъпата книга е:\n\"{mostExpensive.Title}\"\n" +
+                    $"от {mostExpensive.Author}\n" +
+                    $"с цена {mostExpensive.Price:f2} BGN, \n" +
+                    $"издадена през {mostExpensive.Created.ToString("yyyy")}\n" +
+                    $"от ид издател {mostExpensive.PublisherId} и\n" +
+                    $"налично количество - {mostExpensive.Quantity}";
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         private void qeuryToolStripMenuItem_Click(object sender, EventArgs e)

@@ -50,11 +50,14 @@
             this.lblMostExpensive = new System.Windows.Forms.Label();
             this.lstBox3 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lstBox6 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -179,6 +182,8 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label2);
+            this.tabPage6.Controls.Add(this.lstBox6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -264,6 +269,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Справка на поръчки";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(2, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(294, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Kнигите, с цена между 15 и 35лв.";
+            // 
+            // lstBox6
+            // 
+            this.lstBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstBox6.FormattingEnabled = true;
+            this.lstBox6.ItemHeight = 22;
+            this.lstBox6.Location = new System.Drawing.Point(2, 35);
+            this.lstBox6.Name = "lstBox6";
+            this.lstBox6.Size = new System.Drawing.Size(765, 356);
+            this.lstBox6.TabIndex = 2;
+            // 
             // QueriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,6 +307,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +335,7 @@
         private System.Windows.Forms.Label lblMostExpensive;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lstBox6;
     }
 }
