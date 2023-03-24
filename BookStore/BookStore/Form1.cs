@@ -59,7 +59,7 @@ namespace BookStore
             courrierService = new CourrierService();
             bookService = new BookService();
             bookCourrierService = new BookCourrierService();
-        
+
             lstBoxCourriers.Items.Clear();
             lstBoxPublishers.Items.Clear();
             lstBoxOrders.Items.Clear();
@@ -142,6 +142,27 @@ namespace BookStore
         {
             QueriesForm queriesForm = new QueriesForm();
             queriesForm.ShowDialog();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button3_Click(sender, e);
+        }
+
+        private void queriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bttnQueries_Click(sender, e);
+        }
+
+        private void showDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bttnRaw_Click(sender, e);
+
         }
     }
 }

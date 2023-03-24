@@ -208,3 +208,8 @@ C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\
 C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.CourrierCrud.resources
 C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.OrderCrud.resources
 C:\Users\Ayhan\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.QueriesForm.resources
+C:\Users\Teacher\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.BookCrud.resources
+C:\Users\Teacher\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.CourrierCrud.resources
+C:\Users\Teacher\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.OrderCrud.resources
+C:\Users\Teacher\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.PublisherCrud.resources
+C:\Users\Teacher\Source\Repos\AyhanHasanov\Bookshop\BookStore\BookStore\obj\Debug\BookStore.Subforms.QueriesForm.resources
