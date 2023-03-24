@@ -4,8 +4,9 @@
     "\\BookStore",
     "\\BookStore\\BookStore",
     "\\BookStore\\BookStore\\Data",
-    "\\BookStore\\BookStore\\Data\\Models"
+    "\\BookStore\\BookStore\\Data\\Models",
+    "\\BookStore\\BookStore\\Subforms"
   ],
-  "SelectedNode": "\\BookStore\\BookStore\\Data\\Models\\BookCourrier.cs",
+  "SelectedNode": "\\BookStore\\BookStore\\Subforms\\BookCrud.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -137,5 +137,11 @@ namespace BookStore
             orderCrud.ShowDialog();
             bttnRaw_Click(sender, e);
         }
+
+        private void bttnQueries_Click(object sender, EventArgs e)
+        {
+            QueriesForm queriesForm = new QueriesForm();
+            queriesForm.ShowDialog();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.bttnQueries = new System.Windows.Forms.Button();
             this.panelHome = new System.Windows.Forms.Panel();
             this.panelTables = new System.Windows.Forms.Panel();
+            this.bttnOrdersOperations = new System.Windows.Forms.Button();
             this.bttnCourriersOperations = new System.Windows.Forms.Button();
             this.bttnPublisherOperations = new System.Windows.Forms.Button();
             this.bttnBookOperations = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.lstBoxBooks = new System.Windows.Forms.ListBox();
             this.bttnRaw = new System.Windows.Forms.Button();
             this.bttnHome = new System.Windows.Forms.Button();
-            this.bttnOrdersOperations = new System.Windows.Forms.Button();
             this.panelHome.SuspendLayout();
             this.panelTables.SuspendLayout();
             this.SuspendLayout();
@@ -68,12 +68,13 @@
             this.bttnQueries.TabIndex = 0;
             this.bttnQueries.Text = "Queries";
             this.bttnQueries.UseVisualStyleBackColor = true;
+            this.bttnQueries.Click += new System.EventHandler(this.bttnQueries_Click);
             // 
             // panelHome
             // 
             this.panelHome.Controls.Add(this.bttnQueries);
             this.panelHome.Controls.Add(this.bttnDatabase);
-            this.panelHome.Location = new System.Drawing.Point(54, 841);
+            this.panelHome.Location = new System.Drawing.Point(15, 799);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(364, 338);
             this.panelHome.TabIndex = 1;
@@ -94,10 +95,20 @@
             this.panelTables.Controls.Add(this.lstBoxBooks);
             this.panelTables.Controls.Add(this.bttnRaw);
             this.panelTables.Controls.Add(this.bttnHome);
-            this.panelTables.Location = new System.Drawing.Point(2, 3);
+            this.panelTables.Location = new System.Drawing.Point(1, 12);
             this.panelTables.Name = "panelTables";
             this.panelTables.Size = new System.Drawing.Size(1498, 790);
             this.panelTables.TabIndex = 2;
+            // 
+            // bttnOrdersOperations
+            // 
+            this.bttnOrdersOperations.Location = new System.Drawing.Point(971, 686);
+            this.bttnOrdersOperations.Name = "bttnOrdersOperations";
+            this.bttnOrdersOperations.Size = new System.Drawing.Size(475, 47);
+            this.bttnOrdersOperations.TabIndex = 5;
+            this.bttnOrdersOperations.Text = "Добави / Редактирай / Изтрий";
+            this.bttnOrdersOperations.UseVisualStyleBackColor = true;
+            this.bttnOrdersOperations.Click += new System.EventHandler(this.bttnOrdersOperations_Click);
             // 
             // bttnCourriersOperations
             // 
@@ -224,16 +235,6 @@
             this.bttnHome.Text = "Home";
             this.bttnHome.UseVisualStyleBackColor = true;
             this.bttnHome.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // bttnOrdersOperations
-            // 
-            this.bttnOrdersOperations.Location = new System.Drawing.Point(971, 686);
-            this.bttnOrdersOperations.Name = "bttnOrdersOperations";
-            this.bttnOrdersOperations.Size = new System.Drawing.Size(475, 47);
-            this.bttnOrdersOperations.TabIndex = 5;
-            this.bttnOrdersOperations.Text = "Добави / Редактирай / Изтрий";
-            this.bttnOrdersOperations.UseVisualStyleBackColor = true;
-            this.bttnOrdersOperations.Click += new System.EventHandler(this.bttnOrdersOperations_Click);
             // 
             // Form1
             // 
