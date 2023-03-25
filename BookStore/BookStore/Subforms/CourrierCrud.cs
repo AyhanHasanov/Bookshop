@@ -22,6 +22,10 @@ namespace BookStore.Subforms
         private CourrierService _courrierService;
         private void CourrierCrud_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.logoICON;
             _courrierService = new CourrierService();
             button1_Click(sender, e);
         }

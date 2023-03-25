@@ -53,30 +53,32 @@
             this.showDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHome.SuspendLayout();
             this.panelTables.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnDatabase
             // 
-            this.bttnDatabase.Location = new System.Drawing.Point(15, 187);
-            this.bttnDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnDatabase.Location = new System.Drawing.Point(20, 230);
+            this.bttnDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnDatabase.Name = "bttnDatabase";
-            this.bttnDatabase.Size = new System.Drawing.Size(102, 32);
+            this.bttnDatabase.Size = new System.Drawing.Size(136, 39);
             this.bttnDatabase.TabIndex = 0;
-            this.bttnDatabase.Text = "Database";
+            this.bttnDatabase.Text = "База данни";
             this.bttnDatabase.UseVisualStyleBackColor = true;
             this.bttnDatabase.Click += new System.EventHandler(this.button1_Click);
             // 
             // bttnQueries
             // 
-            this.bttnQueries.Location = new System.Drawing.Point(134, 187);
-            this.bttnQueries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnQueries.Location = new System.Drawing.Point(179, 230);
+            this.bttnQueries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnQueries.Name = "bttnQueries";
-            this.bttnQueries.Size = new System.Drawing.Size(102, 32);
+            this.bttnQueries.Size = new System.Drawing.Size(136, 39);
             this.bttnQueries.TabIndex = 0;
-            this.bttnQueries.Text = "Queries";
+            this.bttnQueries.Text = "Заявки";
             this.bttnQueries.UseVisualStyleBackColor = true;
             this.bttnQueries.Click += new System.EventHandler(this.bttnQueries_Click);
             // 
@@ -84,10 +86,11 @@
             // 
             this.panelHome.Controls.Add(this.bttnQueries);
             this.panelHome.Controls.Add(this.bttnDatabase);
-            this.panelHome.Location = new System.Drawing.Point(11, 649);
-            this.panelHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHome.Controls.Add(this.pictureBox1);
+            this.panelHome.Location = new System.Drawing.Point(15, 799);
+            this.panelHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(273, 275);
+            this.panelHome.Size = new System.Drawing.Size(364, 338);
             this.panelHome.TabIndex = 1;
             // 
             // panelTables
@@ -106,18 +109,18 @@
             this.panelTables.Controls.Add(this.lstBoxBooks);
             this.panelTables.Controls.Add(this.bttnRaw);
             this.panelTables.Controls.Add(this.bttnHome);
-            this.panelTables.Location = new System.Drawing.Point(1, 10);
-            this.panelTables.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTables.Location = new System.Drawing.Point(1, 12);
+            this.panelTables.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTables.Name = "panelTables";
-            this.panelTables.Size = new System.Drawing.Size(1124, 642);
+            this.panelTables.Size = new System.Drawing.Size(1499, 790);
             this.panelTables.TabIndex = 2;
             // 
             // bttnOrdersOperations
             // 
-            this.bttnOrdersOperations.Location = new System.Drawing.Point(728, 557);
-            this.bttnOrdersOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnOrdersOperations.Location = new System.Drawing.Point(971, 686);
+            this.bttnOrdersOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnOrdersOperations.Name = "bttnOrdersOperations";
-            this.bttnOrdersOperations.Size = new System.Drawing.Size(356, 38);
+            this.bttnOrdersOperations.Size = new System.Drawing.Size(475, 47);
             this.bttnOrdersOperations.TabIndex = 5;
             this.bttnOrdersOperations.Text = "Добави / Редактирай / Изтрий";
             this.bttnOrdersOperations.UseVisualStyleBackColor = true;
@@ -125,10 +128,10 @@
             // 
             // bttnCourriersOperations
             // 
-            this.bttnCourriersOperations.Location = new System.Drawing.Point(548, 557);
-            this.bttnCourriersOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnCourriersOperations.Location = new System.Drawing.Point(731, 686);
+            this.bttnCourriersOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnCourriersOperations.Name = "bttnCourriersOperations";
-            this.bttnCourriersOperations.Size = new System.Drawing.Size(176, 38);
+            this.bttnCourriersOperations.Size = new System.Drawing.Size(235, 47);
             this.bttnCourriersOperations.TabIndex = 5;
             this.bttnCourriersOperations.Text = "Добави / Редактирай / Изтрий";
             this.bttnCourriersOperations.UseVisualStyleBackColor = true;
@@ -136,10 +139,10 @@
             // 
             // bttnPublisherOperations
             // 
-            this.bttnPublisherOperations.Location = new System.Drawing.Point(368, 557);
-            this.bttnPublisherOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnPublisherOperations.Location = new System.Drawing.Point(491, 686);
+            this.bttnPublisherOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnPublisherOperations.Name = "bttnPublisherOperations";
-            this.bttnPublisherOperations.Size = new System.Drawing.Size(176, 38);
+            this.bttnPublisherOperations.Size = new System.Drawing.Size(235, 47);
             this.bttnPublisherOperations.TabIndex = 5;
             this.bttnPublisherOperations.Text = "Добави / Редактирай / Изтрий";
             this.bttnPublisherOperations.UseVisualStyleBackColor = true;
@@ -147,10 +150,10 @@
             // 
             // bttnBookOperations
             // 
-            this.bttnBookOperations.Location = new System.Drawing.Point(8, 557);
-            this.bttnBookOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnBookOperations.Location = new System.Drawing.Point(11, 686);
+            this.bttnBookOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnBookOperations.Name = "bttnBookOperations";
-            this.bttnBookOperations.Size = new System.Drawing.Size(356, 38);
+            this.bttnBookOperations.Size = new System.Drawing.Size(475, 47);
             this.bttnBookOperations.TabIndex = 5;
             this.bttnBookOperations.Text = "Добави / Редактирай / Изтрий";
             this.bttnBookOperations.UseVisualStyleBackColor = true;
@@ -159,40 +162,36 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(726, 44);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(968, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Поръчки";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(546, 44);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(728, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Куриери";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(366, 44);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(488, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Издателства";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(11, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Книги";
             // 
@@ -200,52 +199,52 @@
             // 
             this.lstBoxCourriers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxCourriers.FormattingEnabled = true;
-            this.lstBoxCourriers.ItemHeight = 17;
-            this.lstBoxCourriers.Location = new System.Drawing.Point(548, 62);
-            this.lstBoxCourriers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstBoxCourriers.ItemHeight = 20;
+            this.lstBoxCourriers.Location = new System.Drawing.Point(731, 76);
+            this.lstBoxCourriers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstBoxCourriers.Name = "lstBoxCourriers";
-            this.lstBoxCourriers.Size = new System.Drawing.Size(176, 480);
+            this.lstBoxCourriers.Size = new System.Drawing.Size(233, 584);
             this.lstBoxCourriers.TabIndex = 3;
             // 
             // lstBoxPublishers
             // 
             this.lstBoxPublishers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxPublishers.FormattingEnabled = true;
-            this.lstBoxPublishers.ItemHeight = 17;
-            this.lstBoxPublishers.Location = new System.Drawing.Point(368, 62);
-            this.lstBoxPublishers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstBoxPublishers.ItemHeight = 20;
+            this.lstBoxPublishers.Location = new System.Drawing.Point(491, 76);
+            this.lstBoxPublishers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstBoxPublishers.Name = "lstBoxPublishers";
-            this.lstBoxPublishers.Size = new System.Drawing.Size(176, 480);
+            this.lstBoxPublishers.Size = new System.Drawing.Size(233, 584);
             this.lstBoxPublishers.TabIndex = 3;
             // 
             // lstBoxOrders
             // 
             this.lstBoxOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxOrders.FormattingEnabled = true;
-            this.lstBoxOrders.ItemHeight = 17;
-            this.lstBoxOrders.Location = new System.Drawing.Point(728, 62);
-            this.lstBoxOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstBoxOrders.ItemHeight = 20;
+            this.lstBoxOrders.Location = new System.Drawing.Point(971, 76);
+            this.lstBoxOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstBoxOrders.Name = "lstBoxOrders";
-            this.lstBoxOrders.Size = new System.Drawing.Size(357, 480);
+            this.lstBoxOrders.Size = new System.Drawing.Size(475, 584);
             this.lstBoxOrders.TabIndex = 3;
             // 
             // lstBoxBooks
             // 
             this.lstBoxBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxBooks.FormattingEnabled = true;
-            this.lstBoxBooks.ItemHeight = 17;
-            this.lstBoxBooks.Location = new System.Drawing.Point(8, 62);
-            this.lstBoxBooks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstBoxBooks.ItemHeight = 20;
+            this.lstBoxBooks.Location = new System.Drawing.Point(11, 76);
+            this.lstBoxBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstBoxBooks.Name = "lstBoxBooks";
-            this.lstBoxBooks.Size = new System.Drawing.Size(357, 480);
+            this.lstBoxBooks.Size = new System.Drawing.Size(475, 584);
             this.lstBoxBooks.TabIndex = 3;
             // 
             // bttnRaw
             // 
-            this.bttnRaw.Location = new System.Drawing.Point(81, 7);
-            this.bttnRaw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnRaw.Location = new System.Drawing.Point(108, 9);
+            this.bttnRaw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnRaw.Name = "bttnRaw";
-            this.bttnRaw.Size = new System.Drawing.Size(97, 28);
+            this.bttnRaw.Size = new System.Drawing.Size(129, 34);
             this.bttnRaw.TabIndex = 1;
             this.bttnRaw.Text = "Обнови";
             this.bttnRaw.UseVisualStyleBackColor = true;
@@ -253,28 +252,29 @@
             // 
             // bttnHome
             // 
-            this.bttnHome.Location = new System.Drawing.Point(8, 7);
-            this.bttnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnHome.Location = new System.Drawing.Point(11, 9);
+            this.bttnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttnHome.Name = "bttnHome";
-            this.bttnHome.Size = new System.Drawing.Size(68, 29);
+            this.bttnHome.Size = new System.Drawing.Size(91, 36);
             this.bttnHome.TabIndex = 0;
-            this.bttnHome.Text = "Home";
+            this.bttnHome.Text = "Начало";
             this.bttnHome.UseVisualStyleBackColor = true;
             this.bttnHome.Click += new System.EventHandler(this.button3_Click);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.databaseToolStripMenuItem,
             this.queriesToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 76);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -284,39 +284,49 @@
             this.showDatabaseToolStripMenuItem,
             this.refreshToolStripMenuItem});
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.databaseToolStripMenuItem.Text = "Database";
             // 
             // showDatabaseToolStripMenuItem
             // 
             this.showDatabaseToolStripMenuItem.Name = "showDatabaseToolStripMenuItem";
-            this.showDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showDatabaseToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.showDatabaseToolStripMenuItem.Text = "Show Database";
             this.showDatabaseToolStripMenuItem.Click += new System.EventHandler(this.showDatabaseToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // queriesToolStripMenuItem
             // 
             this.queriesToolStripMenuItem.Name = "queriesToolStripMenuItem";
-            this.queriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.queriesToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.queriesToolStripMenuItem.Text = "Queries";
             this.queriesToolStripMenuItem.Click += new System.EventHandler(this.queriesToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BookStore.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 857);
+            this.ClientSize = new System.Drawing.Size(1837, 1055);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelTables);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -326,6 +336,7 @@
             this.panelTables.ResumeLayout(false);
             this.panelTables.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem showDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem queriesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -21,6 +21,10 @@ namespace BookStore.Subforms
         private PublisherService _publisherService;
         private void PublisherCrud_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.logoICON;
             panelDelete.Visible = false;
             panelEdit.Visible = false;
             panelAdd.Visible = true;

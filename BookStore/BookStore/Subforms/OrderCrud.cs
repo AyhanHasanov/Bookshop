@@ -24,6 +24,10 @@ namespace BookStore.Subforms
         private CourrierService _courrierService;
         private async void OrderCrud_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.logoICON;
             _orderService = new BookCourrierService();
             _bookService = new BookService();
             _courrierService = new CourrierService();

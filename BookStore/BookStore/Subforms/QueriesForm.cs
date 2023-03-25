@@ -24,6 +24,10 @@ namespace BookStore.Subforms
         private PublisherService _publisherService;
         private async void QueriesForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.logoICON;
             _bookService = new BookService();
             _orderService = new BookCourrierService();
             _courrierService = new CourrierService();

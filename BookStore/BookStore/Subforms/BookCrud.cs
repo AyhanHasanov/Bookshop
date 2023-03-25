@@ -23,6 +23,12 @@ namespace BookStore.Subforms
         private PublisherService _publisherService;
         private async void BookCrud_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.logoICON;
+            chckAllBooks.Checked = true;
+            txtChangePriceBookId.Enabled = false;
             _bookService = new BookService();
             _publisherService = new PublisherService();
             
@@ -34,7 +40,8 @@ namespace BookStore.Subforms
 
             panelDelete.Visible = false;
             panelEdit.Visible = false;
-            panelAdd.Visible = true;
+            panelAdd.Visible = false;
+            panelPrice.Visible = false;
             var loc = new Point(0, 40);
             panelAdd.Location = loc;
             this.Size = panelAdd.Size;
@@ -125,6 +132,7 @@ namespace BookStore.Subforms
             panelDelete.Visible = false;
             panelEdit.Visible = false;
             panelAdd.Visible = true;
+            panelPrice.Visible = false;
             var loc = new Point(0, 40);
             panelAdd.Location = loc;
             this.Size = panelAdd.Size;
@@ -136,6 +144,7 @@ namespace BookStore.Subforms
             panelDelete.Visible = false;
             panelEdit.Visible = true;
             panelAdd.Visible = false;
+            panelPrice.Visible = false;
             var loc = new Point(0, 40);
             panelEdit.Location = loc;
             this.Size = panelEdit.Size;
@@ -147,10 +156,108 @@ namespace BookStore.Subforms
             panelDelete.Visible = true;
             panelEdit.Visible = false;
             panelAdd.Visible = false;
+            panelPrice.Visible = false;
             var loc = new Point(0, 40);
             panelDelete.Location = loc;
             this.Size = panelDelete.Size;
             this.Height += 50;
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelDelete.Visible = false;
+            panelEdit.Visible = false;
+            panelAdd.Visible = false;
+            panelPrice.Visible = true;
+            var loc = new Point(0, 40);
+            panelPrice.Location = loc;
+            this.Size = panelPrice.Size;
+            this.Height += 50;
+        }
+
+        private void radioIncrease_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioDecrease_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chckAllBooks_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckAllBooks.Checked == false)
+                txtChangePriceBookId.Enabled = true;
+            else
+                txtChangePriceBookId.Enabled = false;
+        }
+
+        private async void bttnChangePrice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double percantage = double.Parse(txtPercentage.Text) / 100;
+                if (percantage < 0 || percantage > 1)
+                {
+                    throw new ArgumentOutOfRangeException("Процентът трябва да е между 1 и 100 включително.");
+                }
+
+                if (radioIncrease.Checked)
+                {
+                    if (chckAllBooks.Checked)
+                    {
+                        foreach (var book in await _bookService.GetAllBookAsync())
+                        {
+                            book.Price += (book.Price * percantage);
+                            await _bookService.UpdateAsync(book);
+                        }
+                    }
+                    else
+                    {
+                        Book book = await _bookService.GetBookByIdAsync(int.Parse(txtChangePriceBookId.Text));
+                        if (book != null)
+                        {
+                            book.Price += (book.Price * percantage);
+                            await _bookService.UpdateAsync(book);
+                        }
+                        else
+                        {
+                            throw new ArgumentNullException("Няма такава книга в базата данни!");
+                        }
+                    }
+                }
+                else if (radioDecrease.Checked)
+                {
+                    if (chckAllBooks.Checked)
+                    {
+                        foreach (var book in await _bookService.GetAllBookAsync())
+                        {
+                            var priceAfterSale = book.Price - (book.Price * percantage);
+                            if (priceAfterSale < 0)
+                            {
+                                throw new ArgumentOutOfRangeException("Цената на книгата не може да е 0 лв след разпродажба! Актуализирането на цените е прекратено!");
+                            }
+                            else
+                            {
+                                book.Price = priceAfterSale;
+                                await _bookService.UpdateAsync(book);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Book book = await _bookService.GetBookByIdAsync(int.Parse(txtChangePriceBookId.Text));
+                        book.Price -= (book.Price * percantage);
+                        await _bookService.UpdateAsync(book);
+                    }
+                }
+
+                MessageBox.Show("Успешно променихте цената на книга/книги.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

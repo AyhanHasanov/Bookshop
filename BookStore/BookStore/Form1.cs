@@ -24,14 +24,17 @@ namespace BookStore
         private CourrierService courrierService = new CourrierService();
         private BookService bookService = new BookService();
         private BookCourrierService bookCourrierService = new BookCourrierService();
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.Icon = Properties.Resources.logoICON;
             panelHome.Location = new Point(0, 0);
             panelTables.Location = new Point(0, 0);
             this.Size = panelHome.Size;
             panelTables.Visible = false;
 
+            this.StartPosition = FormStartPosition.CenterScreen;
             bttnRaw_Click(sender, e);
             //panelHome.BackColor = Color.Red;
             //panelTables.BackColor = Color.Blue;
