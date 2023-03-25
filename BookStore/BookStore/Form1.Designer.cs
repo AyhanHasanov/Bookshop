@@ -32,6 +32,7 @@
             this.bttnDatabase = new System.Windows.Forms.Button();
             this.bttnQueries = new System.Windows.Forms.Button();
             this.panelHome = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTables = new System.Windows.Forms.Panel();
             this.bttnOrdersOperations = new System.Windows.Forms.Button();
             this.bttnCourriersOperations = new System.Windows.Forms.Button();
@@ -53,11 +54,10 @@
             this.showDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTables.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnDatabase
@@ -92,6 +92,17 @@
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(364, 338);
             this.panelHome.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BookStore.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelTables
             // 
@@ -308,16 +319,6 @@
             this.queriesToolStripMenuItem.Text = "Queries";
             this.queriesToolStripMenuItem.Click += new System.EventHandler(this.queriesToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BookStore.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 255);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,10 +334,10 @@
             this.Text = "BookStore";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTables.ResumeLayout(false);
             this.panelTables.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

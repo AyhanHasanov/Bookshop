@@ -14,6 +14,7 @@ namespace BookStore.Services
         public CourrierService()
         {
             _context = new ApplicationDbContext();
+            _context.EnsureDatabaseCreated();
         }
         public async Task<Courrier> CreateAsync(Courrier courrier)
         {

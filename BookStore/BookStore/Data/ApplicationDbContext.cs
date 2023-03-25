@@ -131,8 +131,68 @@ namespace BookStore.Data
                     CourrierId = 1,
                     DeliveryDate = new DateTime(2023, 1, 15),
                     Quantity = 2
+                }, new BookCourrier
+                {
+                    OrderID = 3,
+                    BookId = 4,
+                    CourrierId = 3,
+                    DeliveryDate = new DateTime(2023, 2, 8),
+                    Quantity = 91
+                },
+                new BookCourrier
+                {
+                    OrderID = 4,
+                    BookId = 3,
+                    CourrierId = 3,
+                    DeliveryDate = new DateTime(2023, 1, 13),
+                    Quantity = 18
+                },
+                new BookCourrier
+                {
+                    OrderID = 5,
+                    BookId = 5,
+                    CourrierId = 4,
+                    DeliveryDate = new DateTime(2022, 12, 29),
+                    Quantity = 71
+                },
+                new BookCourrier
+                {
+                    OrderID = 6,
+                    BookId = 6,
+                    CourrierId = 2,
+                    DeliveryDate = new DateTime(2022, 3, 31),
+                    Quantity = 69
+                },
+                new BookCourrier
+                {
+                    OrderID = 7,
+                    BookId = 1,
+                    CourrierId = 3,
+                    DeliveryDate = new DateTime(2023, 1, 1),
+                    Quantity = 93
+                },
+                new BookCourrier
+                {
+                    OrderID = 8,
+                    BookId = 7,
+                    CourrierId = 3,
+                    DeliveryDate = new DateTime(2022, 8, 5),
+                    Quantity = 44
+                },
+                new BookCourrier
+                {
+                    OrderID = 9,
+                    BookId = 7,
+                    CourrierId = 3,
+                    DeliveryDate = new DateTime(2022, 5, 3),
+                    Quantity = 23
                 }
                 );
+        }
+
+        public void EnsureDatabaseCreated()
+        {
+            Database.EnsureCreated();
         }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }

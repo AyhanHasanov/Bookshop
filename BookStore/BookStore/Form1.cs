@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStore.Data;
 using BookStore.Data.Models;
 using BookStore.Services;
 using BookStore.Subforms;
@@ -24,8 +25,17 @@ namespace BookStore
         private CourrierService courrierService = new CourrierService();
         private BookService bookService = new BookService();
         private BookCourrierService bookCourrierService = new BookCourrierService();
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
+            await Task.Run(() =>
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    context.Database.EnsureCreated();
+                }
+            });
+
+            this.Show();
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.Icon = Properties.Resources.logoICON;
@@ -106,7 +116,7 @@ namespace BookStore
 
                 lstBoxOrders.Items.Add($"Куриер ID/Име: {courrier.Id} / {courrier.Name}");
                 lstBoxOrders.Items.Add($"Тел. Куриер: {courrier.CourrierPhoneNumber}");
-                lstBoxOrders.Items.Add($"Дата на доставка: {order.DeliveryDate.Date}");
+                lstBoxOrders.Items.Add($"Дата на доставка: {order.DeliveryDate.Date.ToString("dd/MMM/yyyy")}");
                 lstBoxOrders.Items.Add($"Поръчан брой: {order.Quantity}");
                 lstBoxOrders.Items.Add($"");
             }
@@ -166,6 +176,11 @@ namespace BookStore
         {
             bttnRaw_Click(sender, e);
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Този софтуер е разработен от Айхан Хасанов от 12.\"Д\" клас", "Developer information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

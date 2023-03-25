@@ -14,6 +14,7 @@ namespace BookStore.Services
         public PublisherService()
         {
             _context = new ApplicationDbContext();
+            _context.EnsureDatabaseCreated();
         }
 
         public async Task<Publisher> CreateAsync(Publisher publisher)
